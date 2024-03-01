@@ -10,6 +10,28 @@ export default function Menu() {
         </h1>
     <img className='PhotoCard' src={ImageCard} alt='paysage de falaise'></img>
       </div>
+
+      <div className='cardlogements'>
+        <div className='cardindividuel'>
+          <p>texte</p>
+        </div>
+        <div className='cardindividuel'>
+          <p>texte</p>
+        </div>
+        <div className='cardindividuel'>
+          <p>texte</p>
+        </div>
+        <div className='cardindividuel'>
+          <p>texte</p>
+        </div>
+        <div className='cardindividuel'>
+          <p>texte</p>
+        </div>
+        <div className='cardindividuel'>
+          <p>texte</p>
+        </div>
+
+      </div>
     </div>
   )
 }

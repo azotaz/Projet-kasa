@@ -6,12 +6,21 @@ import Respect from './Composant/A Propos/Respect';
 import Fiabilité from './Composant/A Propos/Fiabilité';
 import Sécurité from './Composant/A Propos/Sécurité';
 import Service from './Composant/A Propos/Service';
-import Profil from './Composant/Profil/Profil';
+import Erreur from './Composant/Erreur/Erreur';
 import Navigation from './Composant/Navigation/navigation'
 import APropos from './Composant/A Propos/A Propos';
 import Image from './Photos/LOGOKasa.avif'
+import ImageFin from './Photos/LOGO.avif'
+import styled from 'styled-components'
 
+const Styletext = styled.p`
+color:white;
+font-size:24px;
+`;
 
+const Logoend = styled.img`
+margin-top:50px;
+`;
 
 function App() {
   return (
@@ -31,12 +40,12 @@ function App() {
           <Route path="/A Propos/Service" element={<Service />} />
           <Route path="/A Propos/Sécurité" element={<Sécurité />} />
           </Route>
-          <Route path="/profil/:id" element={<Profil />} />
-          <Route path="/profil/*" element={<Profil />} />
+          <Route path="/*" element={<Erreur />} />
         </Routes>
         </body>
         <footer>
-
+        <Logoend className='Logofin' src={ImageFin} alt='Logo kasa fin'></Logoend> 
+       <Styletext>© 2020 Kasa.All rights reserved</Styletext>
         </footer>
       </div>
   );
