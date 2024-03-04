@@ -1,38 +1,55 @@
-import React from 'react';
-import { Link, Outlet} from 'react-router-dom';
+import React, { useState } from 'react';
 import Photonav from '../../Photos/Photonav.avif';
 import styled from 'styled-components';
-import Fiabilite from './Fiabilité';
-import Respect from './Respect';
-import Service from './Service';
-import Securite from './Sécurité';
 
-const StyleLink = styled(Link)`
+const Stylebtn = styled.button`
 width:86%;
 display:flex;
 flex-direction: column;
 height:52px;
 background-color:#FF6060;
 margin-top: 50px;
+color: white;
+font-size: 24px;
+padding:12px;
+border-radius:5px;
+border:none;
 `;
 
-const StyledOutletFiabilite = styled(Outlet)`
-  margin-top: 20px;
+const Textebtn =styled.p`
+font-size:18px;
+display: ${props => props.show ? 'block' : 'none'};
 `;
 
-const StyledOutletRespect = styled(Outlet)`
-  margin-top: 20px;
-`;
-
-const StyledOutletService = styled(Outlet)`
-  margin-top: 20px;
-`;
-
-const StyledOutletSecurite = styled(Outlet)`
-  margin-top: 20px;
-`;
 
 export default function Developement() {
+
+  const [showTextFiabilite, setShowTextFiabilite] = useState(false);
+  const [showTextRespect, setShowTextRespect] = useState(false);
+  const [showTextService, setShowTextService] = useState(false);
+  const [showTextSecurite, setShowTextSecurite] = useState(false);
+  
+  const handleButtonClick = (text) => {
+    switch (text) {
+      case 'Fiabilité':
+        setShowTextFiabilite(!showTextFiabilite);
+        break;
+      case 'Respect':
+        setShowTextRespect(!showTextRespect);
+        break;
+      case 'Service':
+        setShowTextService(!showTextService);
+        break;
+      case 'Sécurité':
+        setShowTextSecurite(!showTextSecurite);
+        break;
+      default:
+        break;
+    }
+  };
+
+
+
   return (
     <div >
       <div className='card-titre'>
@@ -40,22 +57,22 @@ export default function Developement() {
       </div>
         
         <nav className='NavApropos'> 
-          <StyleLink id="fiabilite-link" to="/A Propos/Fiabilité">Fiabilité </StyleLink>   
-        <StyledOutletFiabilite>
-          <Fiabilite />
-        </StyledOutletFiabilite>
-          <StyleLink id="respect-link" to="/A Propos/Respect">Respect</StyleLink>
-          <StyledOutletRespect>
-          <Respect />
-        </StyledOutletRespect>
-          <StyleLink id="service-link" to="/A Propos/Service">Service </StyleLink>
-          <StyledOutletService>
-          <Service />
-        </StyledOutletService>
-          <StyleLink id="securite-link" to="/A Propos/Sécurité">Sécurité</StyleLink>
-          <StyledOutletSecurite>
-          <Securite />
-        </StyledOutletSecurite>        
+        <div>
+          <Stylebtn onClick={() => handleButtonClick('Fiabilité')}>Fiabilité</Stylebtn>
+          <Textebtn show={showTextFiabilite}>Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes au logements, et toutes les informations sont régulièrement vérifiées par nos équipes.</Textebtn>
+        </div>
+        <div>
+          <Stylebtn onClick={() => handleButtonClick('Respect')}>Respect</Stylebtn>
+          <Textebtn show={showTextRespect}>La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entrainera une exclusion de notre platforme.</Textebtn>
+        </div>
+        <div>
+          <Stylebtn onClick={() => handleButtonClick('Service')}>Service</Stylebtn>
+          <Textebtn show={showTextService}>La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entrainera une exclusion de notre platforme.</Textebtn>
+        </div>
+        <div>
+          <Stylebtn onClick={() => handleButtonClick('Sécurité')}>Sécurité</Stylebtn>
+          <Textebtn show={showTextSecurite}>La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.</Textebtn>
+        </div>                          
         </nav>
     </div>
 

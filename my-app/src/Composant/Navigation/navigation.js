@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import Photonav from '../../Photos/Photonav.avif'
+
 
 const StyledNav = styled.nav`
 margin-top: 50px;
