@@ -21,7 +21,7 @@ export default function Navigation() {
 
         <StyledNav>
          <StyledLink to="/">Accueil</StyledLink>
-         <StyledLink to="/A Propos">A Propos</StyledLink>   
+         <StyledLink to="/APropos">A Propos</StyledLink>   
         </StyledNav>
 
   )

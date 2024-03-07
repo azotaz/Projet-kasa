@@ -3,12 +3,12 @@ import Photonav from '../../Photos/Photonav.avif';
 import styled from 'styled-components';
 
 const Stylebtn = styled.button`
-width:86%;
+width:90%;
 display:flex;
 flex-direction: column;
 height:52px;
 background-color:#FF6060;
-margin-top: 50px;
+margin-top: 30px;
 color: white;
 font-size: 24px;
 padding:12px;
@@ -17,8 +17,17 @@ border:none;
 `;
 
 const Textebtn =styled.p`
+text-align: left;
+padding-top:10px;
+padding-bottom:10px;
+margin-top:0px;
+width:90%;
+background-color:#F6F6F6 ;
 font-size:18px;
 display: ${props => props.show ? 'block' : 'none'};
+max-height: ${props => props.show ? '100px' : '0px'};
+overflow: hidden;
+transition: max-height 1s ease;
 `;
 
 

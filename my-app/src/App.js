@@ -7,6 +7,8 @@ import APropos from './Composant/A Propos/A Propos';
 import Image from './Photos/LOGOKasa.avif'
 import ImageFin from './Photos/LOGO.avif'
 import styled from 'styled-components'
+import Logement from './Composant/Logement/Logement'
+
 
 const Styletext = styled.p`
 color:white;
@@ -29,7 +31,8 @@ function App() {
         <body>
         <Routes>
           <Route path="/" element={<Menu />} />
-          <Route path="/A Propos" element={<APropos />} />
+          <Route path="/APropos" element={<APropos />} />
+          <Route path="/Logements/:title" element={<Logement />} />
           <Route path="/*" element={<Erreur />} />
         </Routes>
         </body>

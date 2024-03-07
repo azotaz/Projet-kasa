@@ -66,7 +66,7 @@ footer {
 
 .cardlogements {
   margin-top: 50px;
-  height: 829px;
+  //height: 829px;
   border-radius: 25px;
   background-color: #F6F6F6;  
   display: grid;
@@ -76,18 +76,37 @@ footer {
 }
 
 .cardindividuel {
-  width: 320px; 
-  height: 320px;
+  width: 340px; 
+  height: 340px;
   background: #FF6060;
   border-radius: 10px;
   display: flex;
   align-self: center;
   justify-self: center;
+  margin: 10px 18px 10px 18px;
 }
 
+.cardindividuel img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.cardindividuel p {
+  width: 250px;
+  z-index: 10;
+  font-size: 18px;
+  color: white;
+  padding: 260px 150px 20px 20px;
+  position: absolute;
+  text-align: left;
+}
+
+
 //A Propos//
-.NavApropos p {
- //display: none;
+.NavApropos {
+margin-left: 8%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
