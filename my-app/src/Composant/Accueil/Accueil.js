@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, useParams } from 'react-router-dom';
 import ImageCard from '../../Photos/imagecardmenu.avif'
 import Logement from '../../logement.json'
 
@@ -14,17 +15,17 @@ export default function Menu() {
 
       <div className='cardlogements'>
         {
-          Logement.map( logement => {
+           Logement.map( logement => {
             return(
-           <div className='cardindividuel'>
+        <Link to={`/Logements/${logement.id}`} key={logement.id}>
+           <div className='cardindividuel' >         
             <img className="Imglogements" src={logement.cover} alt="Proto du logement"/>
-           <p>{logement.title}</p>
+           <p>{logement.title}</p>      
         </div> 
+        </Link>  
             )
           })
         }
-
-
       </div>
     </div>
   )
