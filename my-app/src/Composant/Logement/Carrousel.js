@@ -24,7 +24,6 @@ import Flechedroite from '../../Photos/flechedroite.png'
   };
 
 export default function ImageCarousel({ pictures }) {
-  // Définition des paramètres de Slider
   const settings = {
     dots: false,
     infinite: true,
@@ -38,7 +37,6 @@ export default function ImageCarousel({ pictures }) {
 
   return (
     <Slider {...settings}>
-      {/* Mapping des images */}
       {pictures.map((picture, index) => (
         <div key={index}>
           <img src={picture} alt={`Image ${index + 1}`} />

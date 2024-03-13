@@ -24,10 +24,10 @@ margin-top:0px;
 width:90%;
 background-color:#F6F6F6 ;
 font-size:18px;
-display: ${props => props.show ? 'block' : 'none'};
 max-height: ${props => props.show ? '100px' : '0px'};
 overflow: hidden;
-transition: max-height 1s ease;
+transition: max-height 1s ease,  opacity 1s ease;
+opacity: ${props => (props.show ? '1' : '0')};
 `;
 
 

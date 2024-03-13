@@ -25,8 +25,6 @@ footer {
   width: 1440px;
   background-color: black;
   margin-top: 50px;
- // margin-left: -9%;
- // margin-right: -9%;
 }
 
 
@@ -118,7 +116,7 @@ margin-left: 8%;
 
 .slick-arrow.slick-prev,
 .slick-arrow.slick-next {
-  z-index: 50;
+  z-index: 1;
 }
 
 .slick-prev img,
@@ -146,15 +144,27 @@ margin-left: 8%;
 .titreetlieu {
 width: 60%;
 text-align: start;
-& h1 
-{color: #FF6060;
+& h1 {
+color: #FF6060;
 font-size: 36px;}
-& p 
-{font-weight: bold;
+& p {
+font-weight: bold;
 font-size: 18px;}
 & .tags {
   background-color: #FF6060;
-}}
+  width: 115px;
+  padding: 11px;
+  font-size: 14px;
+  color:white;
+  text-align: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-top: 20px;
+margin-right: 20px;}
+& .btntags {
+  display: flex;
+}
+}
 
 .nom {
 margin-top: 20px; 
@@ -177,6 +187,7 @@ margin-top: 20px;
 
 .nom > div {
   display: flex;
+  justify-content:center;
   align-items: center;
 }
 
@@ -189,36 +200,56 @@ margin-top: 20px;
 .starfilled {
 color: #FF6060;
 font-size: 36px;
-margin: 10px 5px 0px 5px;
+margin: 0px 10px 0px 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.btnlogements {
+width: 100%;
+display: flex;
+justify-content: space-between;
+}
+
+@media (max-width: 900px) {
+
+.card-titre {
+ text-align: start;
+ justify-content: start;
+}
+}
+
+
+@media (max-width: 767px) 
+{
+  header {
+    margin-left: 7%;
+    margin-right: 7%;
+    height: 118px;
+    width:335px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .head {
+    display: flex;
+    justify-content: space-between;
   }
-  to {
-    transform: rotate(360deg);
+  body {
+    width:335px;
+    margin-left: 7%;
+    margin-right: 7%;
   }
+  
+  footer {
+    height: 209px;
+    width: 375px;
+    background-color: black;
+    margin-top: 50px;
+  }
+
+  .Logo {
+    height: 47px;
+    width: 145px;
+    }
+
+  .card-titre h1 {
+    font-size: 24px;
+    }
 }
