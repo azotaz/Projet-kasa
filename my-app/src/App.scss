@@ -242,6 +242,9 @@ display: flex;
 justify-content: space-between;
 }
 
+.btnlogements img {
+  height: 25px;
+}
 @media (max-width: 1100px) {
 
   .cardlogements {
@@ -350,7 +353,7 @@ justify-content: space-between;
 
 //Logement//
 .pagelogement img {
-  height: 335px;
+  height: 255px;
 }
 
 .slick-prev img {
@@ -420,6 +423,10 @@ margin: 0px 5px 0px 5px;
 .btnlogements {
 width: 100%;
 display: block;
+}
+
+.btnlogements img {
+  height: 15px;
 }
 
 }

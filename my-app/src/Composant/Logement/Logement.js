@@ -4,10 +4,13 @@ import styled from 'styled-components';
 import Logement from '../../logement.json';
 import ImageCarousel from './Carrousel';
 import Rating from './Rating';
+import flechebtn from '../../Photos/flechebtn.png';
 
-const Stylebtn = styled.button`
-width:582px;
-display:flex;
+const Styletextbtn = styled.p`
+align-items:center;
+width:96%;
+display: flex;
+justify-content: space-between;
 height:52px;
 background-color:#FF6060;
 margin-top: 30px;
@@ -20,10 +23,24 @@ font-weight: 700;
 
 @media (max-width: 768px) {
   margin-top: 10px;
-  width:100%;
-  height:30px;
+  padding-bottom:10px;
+  width:96.5%;
+  height:20px;
   font-size: 13px;
   padding-top:6px;
+  padding-right:0px;
+}
+`;
+
+const Stylebtn = styled.button`
+display:flex;
+background-color:#FF6060;
+border:none;
+
+@media (max-width: 768px) {
+  padding-right:10px;
+  height:20px;
+  align-items:center;
 }
 `;
 
@@ -31,7 +48,7 @@ const Textebtn =styled.p`
 text-align: left;
 padding-top:10px;
 padding-bottom:10px;
-margin-top:0px;
+margin-top:-23px;
 width:582px;
 background-color:#F6F6F6 ;
 font-size:18px;
@@ -41,6 +58,7 @@ transition: max-height 1s ease,  opacity 1s ease;
 opacity: ${props => (props.show ? '1' : '0')};
 
 @media (max-width: 768px) {
+  margin-top:-12px;
   width:100%;
   font-size:10px;
 }
@@ -102,11 +120,13 @@ export default function LogementIndividuel() {
     </div>
     <div className="btnlogements">
         <div>
-          <Stylebtn onClick={() => handleButtonClick('Description')}>Description</Stylebtn>
+        <Styletextbtn>Description
+          <Stylebtn onClick={() => handleButtonClick('Description')}><img src={flechebtn} alt='flechebtn'></img></Stylebtn></Styletextbtn>
           <Textebtn show={showTextDescription}>{logement.description}</Textebtn>
         </div>
         <div>
-          <Stylebtn onClick={() => handleButtonClick('Equipements')}>Equipements</Stylebtn>
+          <Styletextbtn>Equipements
+          <Stylebtn onClick={() => handleButtonClick('Equipements')}><img src={flechebtn} alt='flechebtn'></img></Stylebtn></Styletextbtn>
           <Textebtn show={showTextEquipements}>      
           <ul>
         {logement.equipments.map((equipment, index) => (
