@@ -14,6 +14,17 @@ font-size: 24px;
 padding:12px;
 border-radius:5px;
 border:none;
+text-align: left;
+font-weight: 700;
+
+@media (max-width: 768px) {
+  margin-top: 10px;
+  width:100%;
+  height:30px;
+  font-size: 13px;
+  padding-top:6px;
+}
+
 `;
 
 const Textebtn =styled.p`
@@ -24,10 +35,16 @@ margin-top:0px;
 width:90%;
 background-color:#F6F6F6 ;
 font-size:18px;
-max-height: ${props => props.show ? '100px' : '0px'};
+max-height: ${props => props.show ? '300px' : '0px'};
 overflow: hidden;
 transition: max-height 1s ease,  opacity 1s ease;
 opacity: ${props => (props.show ? '1' : '0')};
+
+@media (max-width: 768px) {
+  width:100%;
+  font-size:10px;
+}
+
 `;
 
 

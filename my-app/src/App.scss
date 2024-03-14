@@ -3,28 +3,41 @@ html {
   margin: 0 auto;
 }
 
+
 header {
   margin-left: 7%;
   margin-right: 7%;
   height: 118px;
-  width:1240px;
+  width:86%;
 }
 
 .head {
   display: flex;
   justify-content: space-between;
 }
-body {
-  width:1240px;
+
+nav {
+  margin-top: 50px;
+}
+
+main {
+  width:86%;
   margin-left: 7%;
   margin-right: 7%;
 }
 
 footer {
   height: 209px;
-  width: 1440px;
   background-color: black;
   margin-top: 50px;
+}
+
+footer p {
+ color:white;
+ font-size:24px;
+}
+.logofin {
+ margin-top:50px;
 }
 
 
@@ -35,6 +48,25 @@ footer {
 .Logo {
   margin-top: 30px;
   }
+
+.link {
+  padding: 15px;
+  color: black;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.link .accueil:hover {
+  text-decoration: underline;
+}
+.link .apropos:hover {
+  text-decoration: underline;
+}
+.link .accueil:active, .link .accueil:focus {
+  text-decoration: underline;}
+
+.link .apropos:active, .link .apropos:focus {
+  text-decoration: underline;}
 
 .card-titre {
   display: flex;
@@ -64,13 +96,12 @@ footer {
 
 .cardlogements {
   margin-top: 50px;
-  //height: 829px;
   border-radius: 25px;
   background-color: #F6F6F6;  
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  grid-template-rows: repeat(2, 1fr); 
-  padding: 10px 18px 10px 18px;
+  grid-template-columns: repeat(3,1fr); 
+  padding: 10px 10px 10px 30px;
+
 }
 
 .cardindividuel {
@@ -104,7 +135,7 @@ footer {
 
 //A Propos//
 .NavApropos {
-margin-left: 8%;
+margin-left: 7%;
 }
 
 //Logement//
@@ -151,6 +182,7 @@ font-size: 36px;}
 font-weight: bold;
 font-size: 18px;}
 & .tags {
+  font-weight: 700;
   background-color: #FF6060;
   width: 115px;
   padding: 11px;
@@ -173,6 +205,7 @@ margin-top: 20px;
   margin:10px 0px 10px 10px;
   font-size: 18px;
   color: #FF6060;
+  text-align: end;
 }
 & img {
   margin:10px 0px 10px 10px;
@@ -209,47 +242,184 @@ display: flex;
 justify-content: space-between;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
 
+  .cardlogements {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px 10px 10px 60px;
+  }
+}
+
+  @media (max-width: 899px) {
+
+    .cardlogements {
+      grid-template-columns: repeat(1, 1fr);
+      //padding: 10px 10px 10px 0px;
+    }
 .card-titre {
  text-align: start;
  justify-content: start;
+}
+.card-titre h1 {
+  padding-left: 10px;
 }
 }
 
 
 @media (max-width: 767px) 
 {
-  header {
-    margin-left: 7%;
-    margin-right: 7%;
-    height: 118px;
-    width:335px;
-  }
+
   
   .head {
     display: flex;
     justify-content: space-between;
   }
-  body {
-    width:335px;
-    margin-left: 7%;
-    margin-right: 7%;
-  }
+
   
   footer {
-    height: 209px;
-    width: 375px;
-    background-color: black;
-    margin-top: 50px;
+    margin-top: 10px;
+  }
+
+  footer p {
+    position: absolute;
+    left: 33%;
+    color:white;
+    font-size:12px;
+    width: 122px;
+   }
+   .logofin {
+    margin-top: 60px;
+    width: 122px;
+    height: 40px;
+   }
+
+  nav {
+    margin-top: 40px;
   }
 
   .Logo {
     height: 47px;
     width: 145px;
     }
+  
+  .link{
+    font-size: 12px;
+    padding: 10px;
+  }
 
+  .card-titre  {
+    height: 111px;
+  }
   .card-titre h1 {
+    padding-top: 10px;
+    width: 322.5px;
     font-size: 24px;
     }
+
+  .cardlogements {
+      margin-top: 0px;
+      padding: 10px 0px 10px 0px;
+      background-color: white;
+
+    }
+
+  .cardindividuel {
+      width: 322.5px; 
+      height: 255px;
+      background: #FF6060;
+      border-radius: 10px;
+      display: flex;
+      align-self: center;
+      justify-self: center;
+      margin: 10px 0px 10px 0px;
+    }
+
+  .cardindividuel p {
+      width: 250px;
+      z-index: 10;
+      font-size: 18px;
+      color: white;
+      padding: 180px 50px 20px 20px;
+      position: absolute;
+      text-align: left;
+    }
+//A Propos//
+.NavApropos {
+  margin-left: 0%;
+  }
+
+//Logement//
+.pagelogement img {
+  height: 335px;
+}
+
+.slick-prev img {
+  left: 30px;
+  height: 20px;
+  width: 12px;
+}
+
+.slick-next img {
+  height: 20px;
+  right: 30px; 
+  width: 12px;
+}
+
+.basdepage {
+  display: block;
+  //justify-content: space-between;
+}
+.titreetlieu {
+width: 80%;
+& h1 {
+font-size: 18px;}
+& p {
+font-weight: 500;
+font-size: 14px;}
+& .tags {
+  width: 84px;
+  padding: 4px;
+  font-size: 10px;
+  margin-top: 0px;
+margin-right: 10px;}
+}
+
+.nom {
+margin-top: 0px; 
+display: flex;
+flex-direction: row-reverse;
+& p {
+  width: 60px;
+  margin:0px;
+  font-size: 12px;
+}
+& img {
+  height: 32px;
+  width: 32px;
+}}
+
+.rating {
+display: flex;
+position: relative;
+right: 50px;
+}
+
+
+
+.star {
+  color: #E3E3E3;
+  font-size: 18px;
+  margin: 0px 5px 0px 5px;
+}
+.starfilled {
+color: #FF6060;
+font-size: 18px;
+margin: 0px 5px 0px 5px;
+}
+
+.btnlogements {
+width: 100%;
+display: block;
+}
+
 }

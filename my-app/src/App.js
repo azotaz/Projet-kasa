@@ -10,17 +10,8 @@ import styled from 'styled-components'
 import LogementIndividuel from './Composant/Logement/Logement'
 
 
-const Styletext = styled.p`
-color:white;
-font-size:24px;
-`;
-
-const Logoend = styled.img`
-margin-top:50px;
-`;
-
 function App() {
-  return (
+  return (<body>
       <div className="App">
         <header>
           <div className='head'>
@@ -28,20 +19,21 @@ function App() {
             <Navigation/>
           </div>
         </header>
-        <body>
+        <main>
         <Routes>
           <Route path="/" element={<Menu />} />
           <Route path="/APropos" element={<APropos />} />
           <Route path="/Logements/:id" element={<LogementIndividuel />} />
           <Route path="/*" element={<Erreur />} />
         </Routes>
-        </body>
+        </main>
         <footer>
-        <Logoend className='Logofin' src={ImageFin} alt='Logo kasa fin'></Logoend> 
-       <Styletext>© 2020 Kasa.All rights reserved</Styletext>
+        <img className='logofin' src={ImageFin} alt='Logo kasa fin'></img> 
+       <p>© 2020 Kasa.All rights reserved</p>
         </footer>
       </div>
-  );
+  </body> 
+ );
 }
 
 export default App;
