@@ -33,9 +33,15 @@ width:50px;
 background-color:#FF6060;
 border:none;
 
+img {
+  transition: transform 1s;
+  transform: ${props => props.rotate ? 'rotate(-180deg)' : 'none'};
+}
+
 @media (max-width: 768px) {
   height:15px;
   width:30px;
+  padding-right:40px;
 }
 `;
 
@@ -47,7 +53,7 @@ margin-top:-23px;
 width:90%;
 background-color:#F6F6F6 ;
 font-size:18px;
-max-height: ${props => props.show ? '300px' : '0px'};
+max-height: ${props => props.show ? '100px' : '0px'};
 overflow: hidden;
 transition: max-height 1s ease,  opacity 1s ease;
 opacity: ${props => (props.show ? '1' : '0')};
@@ -67,20 +73,33 @@ export default function Developement() {
   const [showTextRespect, setShowTextRespect] = useState(false);
   const [showTextService, setShowTextService] = useState(false);
   const [showTextSecurite, setShowTextSecurite] = useState(false);
+  const [activeButton, setActiveButton] = useState(false);
+  const [isRotatedFiabilite, setIsRotatedFiabilite] = useState(false);
+  const [isRotatedRespect, setIsRotatedRespect] = useState(false);
+  const [isRotatedService, setIsRotatedService] = useState(false);
+  const [isRotatedSecurite, setIsRotatedSecurite] = useState(false);
   
   const handleButtonClick = (text) => {
     switch (text) {
       case 'Fiabilité':
         setShowTextFiabilite(!showTextFiabilite);
+        setIsRotatedFiabilite(!isRotatedFiabilite);
+        setActiveButton(activeButton === 'Fiabilité' ? null : 'Fiabilité');
         break;
       case 'Respect':
         setShowTextRespect(!showTextRespect);
+        setIsRotatedRespect(!isRotatedRespect);
+        setActiveButton(activeButton === 'Respect' ? null : 'Respect');
         break;
       case 'Service':
         setShowTextService(!showTextService);
+        setIsRotatedService(!isRotatedService);
+        setActiveButton(activeButton === 'Service' ? null : 'Service');
         break;
       case 'Sécurité':
         setShowTextSecurite(!showTextSecurite);
+        setIsRotatedSecurite(!isRotatedSecurite);
+        setActiveButton(activeButton === 'Sécurité' ? null : 'Sécurité');
         break;
       default:
         break;
@@ -98,22 +117,22 @@ export default function Developement() {
         <nav className='NavApropos'> 
         <div>
         <Styletextbtn>Fiabilité
-          <Stylebtn onClick={() => handleButtonClick('Fiabilité')}> <img src={flechebtn} alt='flechebtn'></img></Stylebtn></Styletextbtn>
+          <Stylebtn rotate={isRotatedFiabilite} onClick={() => handleButtonClick('Fiabilité')}> <img src={flechebtn} alt='flechebtn'></img></Stylebtn></Styletextbtn>
           <Textebtn show={showTextFiabilite}>Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes au logements, et toutes les informations sont régulièrement vérifiées par nos équipes.</Textebtn>
         </div>
         <div>
         <Styletextbtn>Respect
-          <Stylebtn onClick={() => handleButtonClick('Respect')}><img src={flechebtn} alt='flechebtn'></img></Stylebtn></Styletextbtn>
+          <Stylebtn rotate={isRotatedRespect} onClick={() => handleButtonClick('Respect')}><img src={flechebtn} alt='flechebtn'></img></Stylebtn></Styletextbtn>
           <Textebtn show={showTextRespect}>La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entrainera une exclusion de notre platforme.</Textebtn>
         </div>
         <div>
           <Styletextbtn>Service
-          <Stylebtn onClick={() => handleButtonClick('Service')}><img src={flechebtn} alt='flechebtn'></img></Stylebtn></Styletextbtn>
+          <Stylebtn rotate={isRotatedService} onClick={() => handleButtonClick('Service')}><img src={flechebtn} alt='flechebtn'></img></Stylebtn></Styletextbtn>
           <Textebtn show={showTextService}>La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entrainera une exclusion de notre platforme.</Textebtn>
         </div>
         <div>
           <Styletextbtn>Sécurité
-          <Stylebtn onClick={() => handleButtonClick('Sécurité')}><img src={flechebtn} alt='flechebtn'></img></Stylebtn></Styletextbtn>
+          <Stylebtn rotate={isRotatedSecurite} onClick={() => handleButtonClick('Sécurité')}><img src={flechebtn} alt='flechebtn'></img></Stylebtn></Styletextbtn>
           <Textebtn show={showTextSecurite}>La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.</Textebtn>
         </div>                          
         </nav>

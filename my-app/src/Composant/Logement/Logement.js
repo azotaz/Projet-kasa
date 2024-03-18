@@ -33,15 +33,23 @@ font-weight: 700;
 `;
 
 const Stylebtn = styled.button`
-display:flex;
-background-color:#FF6060;
-border:none;
+  display:flex;
+  background-color:#FF6060;
+  border:none;
+  transition: all 1s;
+  transform: scale(1);
 
-@media (max-width: 768px) {
-  padding-right:10px;
-  height:20px;
-  align-items:center;
-}
+  img {
+    transition: transform 1s;
+    transform: ${props => props.rotate ? 'rotate(-180deg)' : 'none'};
+  }
+
+
+  @media (max-width: 768px) {
+    padding-right:10px;
+    height:20px;
+    align-items:center;
+  }
 `;
 
 const Textebtn =styled.p`
@@ -52,9 +60,9 @@ margin-top:-23px;
 width:582px;
 background-color:#F6F6F6 ;
 font-size:18px;
-max-height: ${props => props.show ? '300px' : '0px'};
+max-height: ${props => props.show ? '100px' : '0px'};
 overflow: hidden;
-transition: max-height 1s ease,  opacity 1s ease;
+transition: max-height 600ms ease,  opacity 1s ease;
 opacity: ${props => (props.show ? '1' : '0')};
 
 @media (max-width: 768px) {
@@ -68,13 +76,21 @@ export default function LogementIndividuel() {
  
   const [showTextDescription, setShowTextDescription] = useState(false);
   const [showTextEquipements, setShowTextEquipements] = useState(false);
+  const [activeButton, setActiveButton] = useState(false);
+  const [isRotatedDescription, setIsRotatedDescription] = useState(false);
+  const [isRotatedEquipements, setIsRotatedEquipements] = useState(false);
+ 
   const handleButtonClick = (text) => {
     switch (text) {
       case 'Description':
         setShowTextDescription(!showTextDescription);
+        setIsRotatedDescription(!isRotatedDescription);
+        setActiveButton(activeButton === 'Description' ? null : 'Description');
         break; ; 
       case 'Equipements':
         setShowTextEquipements(!showTextEquipements);
+        setIsRotatedEquipements(!isRotatedEquipements);
+        setActiveButton(activeButton === 'Equipements' ? null : 'Equipements');
         break;
         default:
         break;
@@ -121,12 +137,14 @@ export default function LogementIndividuel() {
     <div className="btnlogements">
         <div>
         <Styletextbtn>Description
-          <Stylebtn onClick={() => handleButtonClick('Description')}><img src={flechebtn} alt='flechebtn'></img></Stylebtn></Styletextbtn>
+          <Stylebtn rotate={isRotatedDescription} onClick={() => handleButtonClick('Description') }><img src={flechebtn} alt='flechebtn'></img></Stylebtn>
+          </Styletextbtn>
           <Textebtn show={showTextDescription}>{logement.description}</Textebtn>
         </div>
         <div>
           <Styletextbtn>Equipements
-          <Stylebtn onClick={() => handleButtonClick('Equipements')}><img src={flechebtn} alt='flechebtn'></img></Stylebtn></Styletextbtn>
+          <Stylebtn rotate={isRotatedEquipements} onClick={() => handleButtonClick('Equipements')} ><img src={flechebtn} alt='flechebtn'></img></Stylebtn>
+          </Styletextbtn>
           <Textebtn show={showTextEquipements}>      
           <ul>
         {logement.equipments.map((equipment, index) => (
