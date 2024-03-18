@@ -1,3 +1,7 @@
+@mixin title-shadow {
+text-shadow:1px 1px 1px black;
+}
+
 html {
   max-width: 1440px;
   margin: 0 auto;
@@ -87,6 +91,7 @@ footer p {
   color: white;
   padding-bottom: 20px;
   position: absolute;
+  @include title-shadow;
 }}
 
 .cardlogements {
@@ -121,6 +126,7 @@ color: rgba(255, 255, 255, 0.886);
 padding: 260px 150px 20px 20px;
 position: absolute;
 text-align: left;
+@include title-shadow;
 }}
 
 
@@ -145,17 +151,18 @@ margin-left: 7%;
 .slick-next img {
   position: absolute;
   transform: translateY(-50%);
+  top: 35%;
 }
 
 .slick-prev img {
-  left: 50px;
+  left: 100px;
   height: 80px;
   width: 47px;
 }
 
 .slick-next img {
-  height: 80px;
-  right: 50px; 
+  right: 100px;
+  height: 80px; 
   width: 47px;
 }
 
@@ -339,6 +346,11 @@ justify-content: space-between;
 //Logement//
 .pagelogement img {
   height: 255px;
+}
+
+.slick-prev img,
+.slick-next img {
+  top: 29%;
 }
 
 .slick-prev img {
