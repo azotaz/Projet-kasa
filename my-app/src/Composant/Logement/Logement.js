@@ -6,7 +6,7 @@ import ImageCarousel from './Carrousel';
 import Rating from './Rating';
 import flechebtn from '../../Photos/flechebtn.png';
 
-const Styletextbtn = styled.p`
+const Styletextbtn = styled.div`
 align-items:center;
 width:96%;
 display: flex;
@@ -41,7 +41,7 @@ const Stylebtn = styled.button`
 
   img {
     transition: transform 1s;
-    transform: ${props => props.rotate ? 'rotate(-180deg)' : 'none'};
+    transform: ${props => props.rotate === "true" ? 'rotate(-180deg)' : 'none'};
   }
 
 
@@ -52,21 +52,19 @@ const Stylebtn = styled.button`
   }
 `;
 
-const Textebtn =styled.p`
+const Textebtn =styled.div`
 text-align: left;
 padding-top:10px;
 padding-bottom:10px;
-margin-top:-23px;
 width:582px;
 background-color:#F6F6F6 ;
 font-size:18px;
-max-height: ${props => props.show ? '100px' : '0px'};
+max-height: ${props => props.show === "true" ? '100px' : '0px'};
 overflow: hidden;
 transition: max-height 600ms ease,  opacity 1s ease;
-opacity: ${props => (props.show ? '1' : '0')};
+opacity: ${props => (props.show === "true" ? '1' : '0')};
 
 @media (max-width: 768px) {
-  margin-top:-12px;
   width:100%;
   font-size:10px;
 }
@@ -137,15 +135,15 @@ export default function LogementIndividuel() {
     <div className="btnlogements">
         <div>
         <Styletextbtn>Description
-          <Stylebtn rotate={isRotatedDescription} onClick={() => handleButtonClick('Description') }><img src={flechebtn} alt='flechebtn'></img></Stylebtn>
+          <Stylebtn rotate={isRotatedDescription ? "true" : "false"} onClick={() => handleButtonClick('Description') }><img src={flechebtn} alt='flechebtn'></img></Stylebtn>
           </Styletextbtn>
-          <Textebtn show={showTextDescription}>{logement.description}</Textebtn>
+          <Textebtn show={showTextDescription ? "true" : "false"}>{logement.description}</Textebtn>
         </div>
         <div>
           <Styletextbtn>Equipements
-          <Stylebtn rotate={isRotatedEquipements} onClick={() => handleButtonClick('Equipements')} ><img src={flechebtn} alt='flechebtn'></img></Stylebtn>
+          <Stylebtn rotate={isRotatedEquipements ? "true" : "false"} onClick={() => handleButtonClick('Equipements')} ><img src={flechebtn} alt='flechebtn'></img></Stylebtn>
           </Styletextbtn>
-          <Textebtn show={showTextEquipements}>      
+          <Textebtn show={showTextEquipements ? "true" : "false"}>      
           <ul>
         {logement.equipments.map((equipment, index) => (
           <li key={index}>{equipment}</li>

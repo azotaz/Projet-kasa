@@ -6,12 +6,13 @@ import Navigation from './Composant/Navigation/navigation'
 import APropos from './Composant/A Propos/A Propos';
 import Image from './Photos/LOGOKasa.avif'
 import ImageFin from './Photos/LOGO.avif'
-import styled from 'styled-components'
+import { StyleSheetManager } from 'styled-components';
 import LogementIndividuel from './Composant/Logement/Logement'
 
 
 function App() {
-  return (<body>
+  return (
+    <StyleSheetManager>
       <div className="App">
         <header>
           <div className='head'>
@@ -31,8 +32,8 @@ function App() {
         <img className='logofin' src={ImageFin} alt='Logo kasa fin'></img> 
        <p>© 2020 Kasa.All rights reserved</p>
         </footer>
-      </div>
-  </body> 
+      </div> 
+    </StyleSheetManager>
  );
 }
 
