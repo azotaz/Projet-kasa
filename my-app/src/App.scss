@@ -54,20 +54,18 @@ footer p {
   color: black;
   font-size: 24px;
   text-decoration: none;
-}
-
-.link .accueil:hover {
+& .accueil:hover {
   text-decoration: underline;
 }
-.link .apropos:hover {
+& .apropos:hover {
   text-decoration: underline;
 }
-.link .accueil:active, .link .accueil:focus {
+& .accueil:active, .link .accueil:focus {
   text-decoration: underline;}
 
-.link .apropos:active, .link .apropos:focus {
+  & .apropos:active, .link .apropos:focus {
   text-decoration: underline;}
-
+}
 .card-titre {
   display: flex;
   justify-content: center;
@@ -77,22 +75,19 @@ footer p {
   border-radius:25px;
   overflow: hidden;
   margin-top: 20px;
-}
-
-.card-titre img {
+& img {
   max-width: 100%;
   height: auto;
   display: block;
   opacity: 40%;
 }
-
-.card-titre h1 {
+& h1 {
   z-index: 10;
   font-size: 48px;
   color: white;
   padding-bottom: 20px;
   position: absolute;
-}
+}}
 
 .cardlogements {
   margin-top: 50px;
@@ -107,22 +102,18 @@ footer p {
 .cardindividuel {
   width: 340px; 
   height: 340px;
-  //background: #FF6060;
   border-radius: 10px;
   display: flex;
   align-self: center;
   justify-self: center;
   margin: 10px 18px 10px 18px;
-}
-
-.cardindividuel img{
+& img{
   max-width: 100%;
   height: auto;
   display: block;
   border-radius: 10px;
 }
-
-.cardindividuel p {
+& p {
 width: 250px;
 z-index: 1;
 font-size: 18px;
@@ -130,7 +121,7 @@ color: rgba(255, 255, 255, 0.886);
 padding: 260px 150px 20px 20px;
 position: absolute;
 text-align: left;
-}
+}}
 
 
 //A Propos//
@@ -240,11 +231,10 @@ margin: 0px 10px 0px 10px;
 width: 100%;
 display: flex;
 justify-content: space-between;
-}
-
-.btnlogements img {
+& img {
   height: 25px;
-}
+}}
+
 @media (max-width: 1100px) {
 
   .cardlogements {
@@ -281,15 +271,13 @@ justify-content: space-between;
   
   footer {
     margin-top: 10px;
-  }
-
-  footer p {
+  & p {
     position: absolute;
     left: 33%;
     color:white;
     font-size:12px;
     width: 122px;
-   }
+   }}
    .logofin {
     margin-top: 60px;
     width: 122px;
@@ -312,12 +300,11 @@ justify-content: space-between;
 
   .card-titre  {
     height: 111px;
-  }
-  .card-titre h1 {
+  & h1 {
     padding-top: 10px;
     width: 322.5px;
     font-size: 24px;
-    }
+    }}
 
   .cardlogements {
       margin-top: 0px;
@@ -335,10 +322,7 @@ justify-content: space-between;
       align-self: center;
       justify-self: center;
       margin: 10px 0px 10px 0px;
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0) 20.5%, rgba(0, 0, 0, 0.5) 50%);
-    }
-
-  .cardindividuel p {
+  & p {
       width: 250px;
       z-index: 10;
       font-size: 18px;
@@ -346,7 +330,7 @@ justify-content: space-between;
       padding: 180px 50px 20px 20px;
       position: absolute;
       text-align: left;
-    }
+    }}
 //A Propos//
 .NavApropos {
   margin-left: 0%;
@@ -371,8 +355,8 @@ justify-content: space-between;
 
 .basdepage {
   display: block;
-  //justify-content: space-between;
 }
+
 .titreetlieu {
 width: 80%;
 & h1 {
@@ -430,5 +414,4 @@ display: block;
 .btnlogements img {
   height: 15px;
 }
-
 }
