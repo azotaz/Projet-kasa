@@ -28,7 +28,6 @@ export default function ImageCarousel({ pictures }) {
   const shouldRenderSlider = pictures.length >= 2;
 
   if (!shouldRenderSlider) {
-    // Si nous n'avons pas assez d'images, afficher simplement la première image
     return <img src={pictures[0]} alt={`Image 1`} />;
   }
 
